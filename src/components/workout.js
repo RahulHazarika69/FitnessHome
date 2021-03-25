@@ -1,26 +1,24 @@
 import React from "react";
-import "./App.css";
+import "./src/App.css";
 import styled from "styled-components";
 
-import { infos } from "./info";
+import { workout } from "./content";
 
-const App = () => {
+export const App = () => {
   return (
     <Cards>
-      {infos.map((info) => (
+      {workout.map((info) => (
         <>
           <Container>
             <img key={info.image} src={info.image} alt="" />
             <h3>{info.title}</h3>
-            <p>{info.info}</p>
-            <h5>Know More</h5>
+            <p>{info.content}</p>
           </Container>
         </>
       ))}
     </Cards>
   );
 };
-
 const Cards = styled.div`
   padding: 10px 16px;
   background-image: url(https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1080);
@@ -59,12 +57,6 @@ const Container = styled.div`
     font-family: Times;
     font-size: 1rem;
     color: #c0c0c0;
-  }
-  h5 {
-    font-size: 0.8rem;
-    color: lightgreen;
-    text-align: right;
-    margin: 1rem;
   }
 `;
 
